@@ -1,3 +1,7 @@
+//Runtime: 4ms; Runtime Percentile: 92.13%
+//Memory: 3.2MB; Memory Percentile: 99.76%
+
+
 func twoSum(nums []int, target int) []int {
     
     for i,_ := range nums {
