@@ -1,4 +1,4 @@
-//Runtime: 12ms; Runtime Percentile: 58.36%
+//Runtime: 8ms; Runtime Percentile: 88.06%
 //Memory: 5MB; Memory Percentile: 94.35%
 
 /**
@@ -13,27 +13,27 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
     ptr := &ListNode{}
     ans := ptr
     for {
-        (*ptr).Val = (*l1).Val + (*l2).Val + carr
+        ptr.Val = l1.Val + l2.Val + carr
         carr = 0
-        if (*ptr).Val >= 10 {
-            (*ptr).Val = (*ptr).Val % 10
+        if ptr.Val >= 10 {
+            ptr.Val = ptr.Val % 10
             carr = 1
         }
-        if (*l1).Next == nil && (*l2).Next == nil && carr == 0{
+        if l1.Next == nil && l2.Next == nil && carr == 0{
             return ans
         }
-        if (*l1).Next != nil{
-            l1 = (*l1).Next
+        if l1.Next != nil{
+            l1 = l1.Next
         }else{
-            (*l1).Val = 0
+            l1.Val = 0
         }
-        if (*l2).Next != nil {
-            l2 = (*l2).Next
+        if l2.Next != nil {
+            l2 = l2.Next
         }else{
-            (*l2).Val = 0
+            l2.Val = 0
         }
-        (*ptr).Next = &ListNode{}
-        ptr = (*ptr).Next
+        ptr.Next = &ListNode{}
+        ptr = ptr.Next
         
     }
 }
